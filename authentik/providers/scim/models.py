@@ -79,6 +79,7 @@ class SCIMCompatibilityMode(models.TextChoices):
     AWS = "aws", _("AWS")
     SLACK = "slack", _("Slack")
     SALESFORCE = "sfdc", _("Salesforce")
+    VCENTER = "vcenter", _("vCenter")
 
 
 class SCIMProvider(OutgoingSyncProvider, BackchannelProvider):

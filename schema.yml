@@ -33413,6 +33413,7 @@ components:
       - aws
       - slack
       - sfdc
+      - vcenter
       type: string
     Config:
       type: object

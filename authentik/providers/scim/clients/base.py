@@ -88,6 +88,9 @@ class SCIMClient[TModel: "Model", TConnection: "Model", TSchema: "BaseModel"](
     def get_service_provider_config(self):
         """Get Service provider config"""
         default_config = ServiceProviderConfiguration.default()
+        # vCenter does not implement ServiceProviderConfig
+        if self.provider.compatibility_mode == SCIMCompatibilityMode.VCENTER:
+            return default_config
         path = "/ServiceProviderConfig"
         if self.provider.compatibility_mode == SCIMCompatibilityMode.SALESFORCE:
             path = "/ServiceProviderConfigs"
